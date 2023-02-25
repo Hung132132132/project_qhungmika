@@ -510,6 +510,7 @@ a {
     display: block;
     outline: 0;
     text-decoration: none;
+    font-size: xx-large;
 }
 
 .w3-bar .w3-dropdown-hover, .w3-bar .w3-dropdown-click {
