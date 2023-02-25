@@ -1,0 +1,165 @@
+        /*Index1*/
+        .div1 {width: 100%; background-color: black; position: fixed; top: 0;height: 35px;}
+        .a1 {text-decoration: none; color: white; font-size: 20px; padding: 10px; width: 100%; background-color: black; top: 0;height: 35px;}
+        .a1:hover {color: black; background-color: rgb(205, 205, 205);}
+        .sidePicture {
+            height:100%;
+        }
+        .pictureSide {
+            /*width: 50%;
+            height: 100%;*/
+            overflow:hidden;
+        }
+        .content {
+            text-align: center;
+            /*width: 60%;*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p {font-size: larger;}
+        .table1 {margin-left: 10%; margin-right: 10%; width:80%;}
+        .loginForm {
+            border-radius: 15px;
+            height: 50px;
+            width: 100%;
+            border: 3px dashed #c9c9c9;
+        }
+        h2 {
+            text-align: center;
+        }
+        .submitButton {
+            display: block;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .resetAndRegister {margin-top: 20px;margin-left: auto; margin-right: auto;}
+        
+        /* .loginSide {
+            float:right;
+            width: 50%;
+        } */
+        
+        .pContent {
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 20px;
+            text-align: justify;
+        }
+        
+        .fontGeneva {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .center{margin-left: auto; margin-right: auto;}
+        /*manageContact*/
+        .purpleButton {
+            vertical-align: middle;
+            padding: 8px 16px;
+            background-color: #784ca8;
+            text-decoration: none;
+            color: white;
+            border-radius: 10px;
+        }
+        .purpleButton:hover {
+            color: black;
+            background-color: #cdcdcd;
+            transition: 0.3s;
+        }
+        /* .logOut {
+            margin-top: 40px;
+        } */
+        .table2 {
+            margin-top: 10px;
+            width: 100%;
+        }
+        /*about*/
+        .div2 {margin-top: 30px; width: 60%; margin-left: auto; margin-right: auto; text-align: center;}
+        .whiteBox {
+            border-radius: 10px;
+            margin-bottom: 50px;
+            padding: 20px 20px;
+            color: white;
+            background-color: #fc0572;
+            text-align: justify;
+        }
+        .pinkBox {
+            border-radius: 10px;
+            padding: 20px 20px;
+            background-color: #ffc7c7;
+        }
+        /*register form*/
+        .registerForm {margin-right: auto; margin-left: auto; width: fit-content;}
+        .registerButton {margin-left: auto; margin-right: auto; width: fit-content;}
+        .formTitle {
+            margin-top: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .tableForm {
+            width: 100%;
+        }
+        .inputForm {
+            width: 100%;
+        }
+        
+        /*reset pass*/
+        .resetPassForm { width: fit-content; margin-left: auto; margin-right: auto;}
+        .errorMessage {color: red;}
+        
+        body {background-color: #e7e7e7; margin-top:38px}
+        ::-webkit-scrollbar{
+            width:10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #c0c0c0;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #5a9c64;
+        }
+        /*Footer*/
+
+        .diaryInputField {
+            height:7%;
+            width: 100%;
+            position:fixed;
+            bottom: 0;
+            background-color: #18032a;
+            display: block;
+        }
+        .diaryInput{
+            height: 80%;
+            margin-left:5%;
+            margin-top: 5px;
+            width: 85%;
+            border-radius: 20px;
+            color: white;
+            background-color: #482c54;
+            padding: 10px 10px;
+        }
+
+        /* .roundButton {
+            border-radius: 50%;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        } */
+        .roundButton {
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+            color: white;
+            font-size: large;
+        }
+
+        input,::placeholder{
+            left: 10px;
+        }
+
+        .searchField {
+            position: sticky;
+        }
