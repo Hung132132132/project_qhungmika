@@ -134,7 +134,7 @@
             height: 80%;
             margin-left:5%;
             margin-top: 5px;
-            width: 70%;
+            width: 95%;
             border-radius: 20px;
             color: white;
             background-color: #482c54;
@@ -162,4 +162,8 @@
 
         .searchField {
             position: sticky;
+        }
+
+        .inline-display {
+            display: inline-block;
         }
