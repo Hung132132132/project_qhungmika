@@ -76,7 +76,7 @@
         /*about*/
         .div2 {margin-top: 30px; width: 60%; margin-left: auto; margin-right: auto; text-align: center;}
         .whiteBox {
-            border-radius: 10px;
+            border-radius: 20px;
             margin-bottom: 50px;
             padding: 20px 20px;
             color: white;
@@ -154,6 +154,7 @@
             background-color: transparent;
             color: white;
             font-size: large;
+                left: -10px;
         }
 
         input,::placeholder{
