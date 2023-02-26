@@ -36,7 +36,7 @@ app.get("/read", (req,res) => {
     
         var dbo = db.db("diary");
     
-        dbo.collection("post").find().sort({date: -1}).toArray((err, objs) =>{
+        dbo.collection("post").find().sort({date: -1, _id: -1}).toArray((err, objs) =>{
             if(err) throw err;
 
             if(objs.length != 0) console.log("Retrieve data successfully");
@@ -54,7 +54,7 @@ app.get("/write", (req,res) => {
         console.log(req.cookies.userID);
         var query = {user: req.cookies.userID};
     
-        dbo.collection("post").find(query, {sort: {date: -1}}).toArray((err, objs) =>{
+        dbo.collection("post").find(query, {sort: {date: -1, _id: -1}}).toArray((err, objs) =>{
             if(err) throw err;
 
             if(objs.length != 0) console.log("Retrieve data successfully");
@@ -100,7 +100,7 @@ app.post('/read/search', (req,res) => {
         var date = req.body.searchInput;
         // var dateInput = date.format('YYYY-MM-D');
         var query = {date: date};
-        dbo.collection("post").find(query).toArray((err,objs)=>{
+        dbo.collection("post").find(query, {sort: {date: -1, _id: -1}}).toArray((err,objs)=>{
             if (err) throw err;
 
             if(objs.length != 0) {
@@ -119,9 +119,10 @@ app.post('/write/search', (req,res) => {
         if(err) throw err;
         var dbo = db.db("diary");
         var date = req.body.searchInput;
+        console.log(date);
         // var dateInput = date.format('YYYY-MM-D');
-        var query = {date: date};
-        dbo.collection("post").find(query).toArray((err,objs)=>{
+        var query = {user: req.cookies.userID, date: date};
+        dbo.collection("post").find(query, {sort: {date: -1, _id: -1}}).toArray((err,objs)=>{
             if (err) throw err;
 
             if(objs.length != 0) {
@@ -134,3 +135,27 @@ app.post('/write/search', (req,res) => {
         });
     });
 });
+
+app.get("/post/delete/:content", function (request, response, next) {
+    
+    mongo.connect((err, db) =>{
+        if(err) throw err;
+        
+        var id = request.params.content;
+        var dbo = db.db("diary");
+        var query = {content: id};
+
+        dbo.collection("post").deleteOne(query, (err, objs) =>{
+            if(err) throw err;
+            
+            if(objs.length != 0) console.log("Deleted successfully");
+            console.log(objs);
+            response.redirect('/write');
+        })
+    })
+});
+
+app.get('/logout', (req,res,next) => {
+    res.clearCookie('userID');
+    res.redirect('/');
+})

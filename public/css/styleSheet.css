@@ -176,3 +176,10 @@
         .searchInput{
             width: 80%;
         }
+
+        .deleteButton {
+            /* display: inline-block;
+            margin-left: auto;
+            margin-right: 0%; */
+            float: right;
+        }

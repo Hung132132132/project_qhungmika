@@ -11,7 +11,33 @@
               <!-- <button type="submit">Search</button> -->
             </form>
           </div>
-          <%- include('includes/diaryBox.ejs') %>
+          <% if(post.length !=0){ post.forEach(function(objs){ if (objs.user=='qhung' ){ %>
+            <div class="row">
+              <div class="col">
+                <div class="whiteBox" style="background-color: rgb(68, 68, 254);">
+                  <p><b>
+                      <%=objs.date%>
+                    </b></p>
+                  <p>
+                    <%=objs.content%>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <% } else { %>
+              <div class="row">
+                <div class="col">
+                  <div class="whiteBox">
+                    <p><b>
+                        <%=objs.date%>
+                      </b></p>
+                    <p>
+                      <%=objs.content%>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% } })}; %>
       </main>
       <footer>
         <!-- place footer here -->
