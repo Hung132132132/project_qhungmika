@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const moment = require("moment/moment");
 const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
+const session = require('express-session');
 const url = "mongodb+srv://hung132132:Hung24072006@qhungmika.z94reif.mongodb.net/diary?retryWrites=true&w=majority";
 const mongo = new MongoClient(url, {useNewUrlParser:true});
 const app = express();
@@ -14,6 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static("public"));
 app.use(cookieParser());
+app.use(session({
+    secret: 'key that will sign cookie',
+    resave:false,
+    saveUninitialized:false
+}))
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -22,7 +28,7 @@ app.listen(PORT , (res,req) => {
     console.log("Server started on port", PORT);
 });
 
-app.get("/", (req,res) => {
+app.get("/read", (req,res) => {
     // res.cookie('qhung', '123')
     // console.log(req.cookies);
     mongo.connect((err, db) =>{
@@ -45,8 +51,10 @@ app.get("/write", (req,res) => {
         if(err) throw err;
     
         var dbo = db.db("diary");
+        console.log(req.cookies.userID);
+        var query = {user: req.cookies.userID};
     
-        dbo.collection("post").find().toArray((err, objs) =>{
+        dbo.collection("post").find(query).toArray((err, objs) =>{
             if(err) throw err;
 
             if(objs.length != 0) console.log("Retrieve data successfully");
@@ -57,31 +65,16 @@ app.get("/write", (req,res) => {
     })
 });
 
-app.get('/login', (req,res) => {
+app.get('/', (req,res) => {
     res.render('login');
 });
 
-// app.post('/login/validate', (req,res) => {
-//     var username = req.body.username;
-//     var pass = req.body.password;
+app.post('/login/validate', (req,res) => {
+    var username = req.body.username;
+    res.cookie('userID', username);
 
-//     mongo.connect((err,db) => {
-//         if (err) throw err;
-//         var dbo = db.db("diary");
-//         var query = {username: username, password: pass}
-//         dbo.collection("account").find(query).toArray((err,objs) =>{
-//             if(err) throw err;
-
-//             if(objs.length != 0) {
-//                 console.log(username);
-//                 res.cookie('userId',username);
-//                 res.redirect('/');
-//             } else {
-//                 res.redirect('/login');
-//             }
-//         })
-//     })
-// });
+    res.redirect('/read');
+});
 
 app.post('/write/addPost', (req,res) =>{
     mongo.connect((err, db) =>{

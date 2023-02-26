@@ -3,13 +3,12 @@
     <%- include('includes/nav.ejs') %>
     <form action="/login/validate" method="POST">
         <div class="mb-3 center" style="width: 80%;">
-          <label style="color:white" for="" class="form-label">Usename</label>
-          <input type="text" class="form-control" name="username" id="" placeholder="">
-          <small id="emailHelpId" class="form-text text-muted">'mika' or 'qhung'</small>
-          <label style="color:white" for="" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" id="" placeholder="">
-          <small id="emailHelpId" class="form-text text-muted">Day when we started dating</small>
-          <button type="submit">Log in</button>
+          <label style="color:white; font-size: xx-large;" for="" class="form-label">CHOOSE ACCOUNT</label>
+          <select name="username" style="width:100%; padding: 20px; font-size: xx-large;">
+            <option value="qhung">qhung</option>
+            <option value="mika">mika</option>
+          </select>
+          <button style="width:100%; padding: 20px; font-size: xx-large;" type="submit">Log in</button>
         <!-- </div>
         <input type="text" name="username">
         <input type="password" name="password">

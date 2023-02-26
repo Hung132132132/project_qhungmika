@@ -77,16 +77,19 @@
         .div2 {margin-top: 30px; width: 60%; margin-left: auto; margin-right: auto; text-align: center;}
         .whiteBox {
             border-radius: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
             padding: 20px 20px;
             color: white;
             background-color: #fc0572;
             text-align: justify;
         }
         .pinkBox {
-            border-radius: 10px;
+            border-radius: 20px;
+            margin-bottom: 35px;
             padding: 20px 20px;
-            background-color: #ffc7c7;
+            color: white;
+            background-color: #51335e;
+            text-align: justify;
         }
         /*register form*/
         .registerForm {margin-right: auto; margin-left: auto; width: fit-content;}
@@ -153,7 +156,7 @@
             text-decoration: none;
             border: none;
             background-color: transparent;
-            color: white;
+            color: rgb(255, 255, 255);
             font-size: large;
                 left: -10px;
         }
