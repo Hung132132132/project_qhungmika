@@ -8,8 +8,6 @@ const url = "mongodb+srv://hung132132:Hung24072006@qhungmika.z94reif.mongodb.net
 const mongo = new MongoClient(url, {useNewUrlParser:true});
 const app = express();
 
-const authMiddleware = require('./middlewares/auth.middleware');
-
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,7 +22,7 @@ app.listen(PORT , (res,req) => {
     console.log("Server started on port", PORT);
 });
 
-app.get("/", authMiddleware.requireAuth, (req,res) => {
+app.get("/", (req,res) => {
     // res.cookie('qhung', '123')
     // console.log(req.cookies);
     mongo.connect((err, db) =>{
