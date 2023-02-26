@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/nav.ejs') %>
+    <form action="/login/validate" method="POST">
+        <div class="mb-3 center" style="width: 80%;">
+          <label style="color:white" for="" class="form-label">Usename</label>
+          <input type="text" class="form-control" name="username" id="" placeholder="">
+          <small id="emailHelpId" class="form-text text-muted">'mika' or 'qhung'</small>
+          <label style="color:white" for="" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="" placeholder="">
+          <small id="emailHelpId" class="form-text text-muted">Day when we started dating</small>
+          <button type="submit">Log in</button>
+        <!-- </div>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit">login</button> -->
+    </form>
+    <!-- <div class="container-fluid">
+        <form action="/login/validate" method="POST">
+            <div class="col-10 inline-display">
+              <input name="username" id="username" class="diaryInput center" type="text" placeholder="Aa">
+            </div>
+            <div class="col-1 inline-display">
+              <button style="color: #fc0572;" type="submit" class="fa fa-send roundButton"></button>
+            </div>
+        </form>
+
+    </div> -->
+</body>

@@ -1,39 +1,34 @@
 <%- include('includes/head.ejs') %>
 
-<body>
+  <body>
     <%- include('includes/nav.ejs') %>
-  <main>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <%- include('includes/searchbar.ejs') %>
-            </div>
+      <div class="container-fluid">
+        <div class="whiteBox searchField">
+          <form action="/write/search" method="POST">
+            <input class="" type="date" name="searchInput" id="emailId">
+            <button type="submit" class="fa fa-search searchButton roundButton"></button>
+          </form>
         </div>
         <%- include('includes/diaryBox.ejs') %>
-    </div>
-    <div class="diaryInputField ">
-        <form>
-            <div class="col-10 inline-display">
-                <input class="diaryInput center" type="text" placeholder="Aa">
-            </div>
-            <div class="col-1 inline-display">
-                <button style="color: #fc0572;" type="submit" class="fa fa-send roundButton"></button>
-            </div>
-
+      </div>
+      <div class="diaryInputField row">
+        <form action="/write/addPost" method="POST">
+          <div class="col-10 inline-display">
+            <input name="post" class="diaryInput center" type="text" placeholder="Aa">
+          </div>
+          <div class="col-1 inline-display">
+            <button style="color: #fc0572;" type="submit" class="fa fa-send roundButton"></button>
+          </div>
         </form>
-    </div>
-</main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+      </div>
+      <!-- Bootstrap JavaScript Libraries -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+  </body>
 
-</html>
+  </html>

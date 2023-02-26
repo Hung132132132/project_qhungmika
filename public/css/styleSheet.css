@@ -111,14 +111,15 @@
         
         body {background-color: #e7e7e7; margin-top:38px}
         ::-webkit-scrollbar{
-            width:10px;
+            width: 7px;
+            /* opacity:50%; */
         }
         ::-webkit-scrollbar-thumb {
             background-color: #c0c0c0;
             border-radius: 5px;
         }
         ::-webkit-scrollbar-track {
-            background-color: #5a9c64;
+            background-color: transparent;
         }
         /*Footer*/
 
@@ -158,11 +159,6 @@
 
         input,::placeholder{
             left: 10px;
-        }
-
-        .searchField {
-            position: sticky;
-            margin-top: 30px;
         }
 
         .inline-display {
