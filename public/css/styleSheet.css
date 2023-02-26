@@ -172,3 +172,7 @@
         .sendPosition{
             margin-left: -30px;
         }
+
+        .searchInput{
+            width: 80%;
+        }

@@ -178,7 +178,8 @@ html, body {
     font-size: 15px;
     line-height: 1.5;
     background-color: #250036;
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 html {
@@ -511,7 +512,7 @@ a {
     display: block;
     outline: 0;
     text-decoration: none;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .w3-bar .w3-dropdown-hover, .w3-bar .w3-dropdown-click {

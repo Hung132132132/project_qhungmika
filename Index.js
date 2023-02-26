@@ -36,7 +36,7 @@ app.get("/read", (req,res) => {
     
         var dbo = db.db("diary");
     
-        dbo.collection("post").find().toArray((err, objs) =>{
+        dbo.collection("post").find().sort({date: -1}).toArray((err, objs) =>{
             if(err) throw err;
 
             if(objs.length != 0) console.log("Retrieve data successfully");
@@ -54,7 +54,7 @@ app.get("/write", (req,res) => {
         console.log(req.cookies.userID);
         var query = {user: req.cookies.userID};
     
-        dbo.collection("post").find(query).toArray((err, objs) =>{
+        dbo.collection("post").find(query, {sort: {date: -1}}).toArray((err, objs) =>{
             if(err) throw err;
 
             if(objs.length != 0) console.log("Retrieve data successfully");
@@ -83,7 +83,7 @@ app.post('/write/addPost', (req,res) =>{
         var dbo = db.db("diary");
         var date = moment();
         var currentDate = date.format('YYYY-MM-D');
-        var newPost = {content: req.body.post, date: currentDate};
+        var newPost = {content: req.body.post, date: currentDate, user: req.cookies.userID};
 
         dbo.collection("post").insertOne(newPost, (err, result) =>{
             if(err) throw err;
